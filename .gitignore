@@ -215,7 +215,7 @@ pip-log.txt
 .mr.developer.cfg
 
 #CSR Build
-/dpend_Debug_CSR101x_A05
+/depend_Debug_CSR101x_A05
 *.o
 *.d
 *.si
