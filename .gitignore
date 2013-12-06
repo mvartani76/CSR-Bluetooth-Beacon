@@ -221,3 +221,4 @@ pip-log.txt
 *.si
 *.xuv
 *.elf
+*.mak
