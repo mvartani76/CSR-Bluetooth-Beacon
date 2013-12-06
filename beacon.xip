@@ -1,0 +1,40 @@
+<project buildenvironment="{067c869e-5bd9-4595-9f4c-60348133ad8e}" buildenvironmentname="uEnergy" executionenvironmentoption="XAP2+ P0 ELF DWARF BINUTILS UENERGYSDK" buildenvironmentoption="UENERGYSDK" executionenvironmentname="uEnergy" name="CSR uEnergy" executionenvironment="{39e65239-59f4-4d78-b84a-26eaebfaa4de}" >
+ <folder name="C Files" >
+  <extension name="c" />
+  <file path="app_debug.c" />
+  <file path="app_main.c" />
+ </folder>
+ <folder name="Header Files" >
+  <extension name="h" />
+  <file path="app_debug.h" />
+  <file path="app_common.h" />
+  <file path="gap_conn_params.h" />
+  <file path="user_config.h" />
+ </folder>
+ <folder name="Assembler Files" >
+  <extension name="asm" />
+ </folder>
+ <folder name="GATT db files" >
+  <extension name="db" />
+ </folder>
+ <file path="beacon_CSR101x.keyr" />
+ <file path="beacon_CSR100x.keyr" />
+ <properties currentconfiguration="Debug" >
+  <configuration name="Debug" >
+   <property key="csr100x_keyr" >beacon_CSR100x.keyr</property>
+   <property key="csr101x_a05_keyr" >beacon_CSR101x.keyr</property>
+   <property key="debugtransport" ></property>
+   <property key="defines" ></property>
+   <property key="libs" ></property>
+   <property key="output" ></property>
+  </configuration>
+  <configuration name="Release" >
+   <property key="csr100x_keyr" >beacon_CSR100x.keyr</property>
+   <property key="csr101x_a05_keyr" >beacon_CSR101x.keyr</property>
+   <property key="debugtransport" ></property>
+   <property key="defines" ></property>
+   <property key="libs" ></property>
+   <property key="output" ></property>
+  </configuration>
+ </properties>
+</project>

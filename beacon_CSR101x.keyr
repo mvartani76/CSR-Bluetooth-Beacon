@@ -1,0 +1,56 @@
+>DECIMAL_CS_VERSION=67
+
+// (0001) - Bluetooth device address
+&BDADDR = D5BE 5b00 0002
+
+// (0002) - Crystal frequency trim
+&CRYSTAL_FTRIM = 0020
+
+// (0007) - Transmit power level
+&TX_POWER_LEVEL = 0
+
+// USER_KEY0 : most significant word of the CSR Beacon UUID
+// USER_KEY1 : Beacon major (default: 0)
+// USER_KEY2 : Beacon minor (default: 0)
+// USER_KEY3 : Beacon TX Power (default: -74dBm)
+// Use zero to select the default values
+&USER_KEYS = 0001 0ce5 0000 0000 0000 0000 0000 0000
+
+// Depending upon the EEPROM/SPI size, an application can specify the memory
+// area to be used for NVM storage. The begining of EEPROM/SPI is occupied 
+// by the firmware/app. Space after this is available for the application to 
+// use for its NVM module. The following keys control this storage:
+//
+// nvm_start_address: The address at which the NVM storage starts, in bytes.
+//					  This value should be set based on the available
+//				      EEPROM/SPI memory.
+//                    For an EEPROM of size 512kbit, this default to 
+//					  0xf000 i.e. 480kbits = 60kbyte
+// nvm_size         : The size of the user NVM store in words. This value 
+//				      should be set based on the EEPRM/SPI memory.
+//					  If SPI is being used then nvm_size must be an 
+//					  integer fraction of spi_flash_block size.
+//					  For an EEPROM of size 512kbit, this defaults to 
+//					  64 words i.e. 1kbit
+//
+// spi_flash_block_size          : The size in bytes of a SPI block. 
+//                                 Unused if I2C EEPROM.
+// nvm_spi_flash_number_of_blocks: The number of SPI blocks allocated to user 
+//                                 NVM. Unused if I2C EEPROM.
+//
+// So the following must hold true:
+// On SPI:
+//       nvm_start_address + (spi_flash_block_size * nvm_spi_flash_number_of_blocks) <= size of chip in bytes
+//       nvm_size must be an integer fraction of spi_flash_block_size
+// On EEPROM
+//       nvm_start_address + nvm_size <= size of chip in bytes.
+
+&nvm_start_address = f000 // Default value(in hex) for a 512kbit EEPROM
+&nvm_size = 40            // Default value(in hex) for a 512kbit EEPROM
+
+//&nvm_start_address = 7F80 // Value(in hex) for a 256kbit EEPROM
+//&nvm_size = 40            // Number of words(in hex) for 256kbit EEPROM
+
+//&nvm_start_address = 3F80 // Value(in hex) for a 128kbit EEPROM
+//&nvm_size = 40            // Number of words(in hex) for 128kbit EEPROM
+
